@@ -22,3 +22,6 @@ spec:
       containers:
       - name: consumer-app-agustin
         image: agusbenoit/challenge-1-flask-k8s-consumer:1.0
+        env:
+        - name: PYTHONUNBUFFERED
+          value: "1"  
