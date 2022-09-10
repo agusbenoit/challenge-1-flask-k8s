@@ -1,0 +1,24 @@
+apiVersion: apps/v1 
+kind: Deployment
+metadata:
+  name: deploy-flask-app-agustin
+  namespace: educacionit
+spec:
+  selector:
+    matchLabels:
+      app: flask-app-agustin
+  replicas: 3 
+  template:
+    metadata:
+      labels:
+        app: flask-app-agustin
+    spec:
+      tolerations:
+        - key: "environment"
+          value: "dev"
+          operator: "Equal"
+      containers:
+      - name: flask-app-agustin
+        image: agusbenoit/challenge-1-flask-k8s-api:1.0
+        ports:
+        - containerPort: 8000
