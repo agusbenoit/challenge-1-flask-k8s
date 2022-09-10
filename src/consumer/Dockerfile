@@ -1,4 +1,4 @@
-FROM python:3.9-alpine
+FROM python:3.9.14-alpine3.16
 
 WORKDIR /consumer
 COPY requirements.txt requirements.txt

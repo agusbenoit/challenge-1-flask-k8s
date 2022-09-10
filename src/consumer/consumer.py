@@ -11,7 +11,7 @@ def main():
         url = "http://172.17.0.2:8000"
     else:
         print("Run container on dev env")
-        url = "http://service-flask-app"
+        url = "http://service-flask-app-agustin:8000"
     while True:
         try:
             responde = requests.get(url, timeout=5)
