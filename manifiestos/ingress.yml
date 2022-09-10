@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  namespace: educacionit
+  name: ingress-flask-app-agustin
+  annotations:
+     nginx.ingress.kubernetes.io/rewrite-target: /$1
+spec:
+  rules:
+    - host: flask-app-agustin
+      http:
+        paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: service-flask-app-agustin
+              port:
+                number: 8000
